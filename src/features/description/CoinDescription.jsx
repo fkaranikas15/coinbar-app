@@ -9,6 +9,7 @@ const StyledCoinDescription = styled.div`
   width: 100%;
 
   margin-top: 9.6rem;
+  margin-top: 20rem;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 9.6rem;

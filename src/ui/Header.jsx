@@ -8,13 +8,14 @@ import { device } from "../utils/sizes";
 import { IconBox } from "./IconBox";
 
 const ColoredContainer = styled.div`
-  position: ${(props) => props.sticky};
+  position: fixed;
   top: 0;
   z-index: 100;
   width: 100%;
-
   background-color: ${(props) =>
-    props.sticky === "fixed" ? "var(--color-dark-blue)" : "transparent"};
+    props.page === "coin" && props.sticky !== "fixed"
+      ? "transparent"
+      : "var(--color-dark-blue)"};
 
   box-shadow: ${(props) =>
     props.sticky === "fixed" ? "var(--shadow-header)" : "none"};
@@ -94,7 +95,7 @@ function Header({ page }) {
   }
 
   return (
-    <ColoredContainer sticky={sticky}>
+    <ColoredContainer sticky={sticky} page={page}>
       <StyledHeader>
         <Logo to="/">COINBAR</Logo>
         <Navigation

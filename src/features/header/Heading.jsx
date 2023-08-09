@@ -7,6 +7,7 @@ const StyledHeading = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 9.6rem;
 `;
 
 const StyledH1 = styled.h1`

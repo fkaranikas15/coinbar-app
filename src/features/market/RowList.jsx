@@ -10,14 +10,14 @@ const StyledRowList = styled.ul`
 `;
 
 function RowList({ activePage }) {
-  const { coins, isLoading, error } = useCoins();
+  const { coins, error } = useCoins();
 
   const showedCoins = coins.filter(
     (_, i) =>
       i >= (activePage - 1) * PAGE_SIZE && i <= activePage * PAGE_SIZE - 1
   );
 
-  if (isLoading || error) return <Spinner />;
+  if (error) return <Spinner />;
 
   return (
     <StyledRowList>
